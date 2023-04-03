@@ -33,6 +33,9 @@ public class Horario {
 	@Column(name="hr_horario")
 	private Hora hora;
 	
+	@Column
+	private boolean disponivel;
+	
 	public Horario() {
 		super();
 	}
