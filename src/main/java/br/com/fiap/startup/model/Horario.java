@@ -1,6 +1,7 @@
 package br.com.fiap.startup.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,26 +25,42 @@ public class Horario {
 	@Column(name="cd_horario")
 	private int id;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@Column(name="dt_horario")
 	private LocalDate data;
 	
-	@Enumerated(EnumType.STRING)
-	@Temporal(TemporalType.TIME)
+	//@Enumerated(EnumType.STRING)
+	//@Temporal(TemporalType.TIME)
 	@Column(name="hr_horario")
-	private Hora hora;
+	private LocalTime hora;
 	
 	@Column
-	private boolean disponivel;
+	private boolean estaDisponivel;
 	
 	public Horario() {
 		super();
 	}
 	
-	public Horario(LocalDate data, Hora hora) {
+	public Horario(LocalDate data, LocalTime hora) {
 		super();
 		this.data = data;
 		this.hora = hora;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public boolean isEstaDisponivel() {
+		return estaDisponivel;
+	}
+
+	public void setEstaDisponivel(boolean estaDisponivel) {
+		this.estaDisponivel = estaDisponivel;
 	}
 
 	public LocalDate getData() {
@@ -54,11 +71,11 @@ public class Horario {
 		this.data = data;
 	}
 
-	public Hora getHora() {
+	public LocalTime getHora() {
 		return hora;
 	}
 
-	public void setHora(Hora hora) {
+	public void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
 	

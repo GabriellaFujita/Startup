@@ -30,7 +30,7 @@ public class Servico {
 	@Column(name="vl_servico")
 	private double valor;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="dt_horarios")
 	private ArrayList <Horario> horariosDisponiveis = new ArrayList<>();
 	

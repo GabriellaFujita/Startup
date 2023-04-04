@@ -11,6 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import java.time.LocalTime;
 
 @Entity
 @Table(name="T_AGENDAMENTO")
@@ -22,9 +23,9 @@ public class Agendamento {
 	@Column(name="cd_agendamento")
 	private int id;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	//@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="dt_agendamento")
-	private Horario horarioMarcado;
+	private LocalTime horarioMarcado;
 	
 	@ManyToOne
 	@JoinColumn(name="cd_servico")
@@ -41,7 +42,7 @@ public class Agendamento {
 		super();
 	}
 
-	public Agendamento(int id, Horario horarioMarcado, Servico servico, Cliente cliente) {
+	public Agendamento(int id, LocalTime horarioMarcado, Servico servico, Cliente cliente) {
 		super();
 		this.id = id;
 		this.horarioMarcado = horarioMarcado;
@@ -57,11 +58,11 @@ public class Agendamento {
 		this.id = id;
 	}
 
-	public Horario getHorarioMarcado() {
+	public LocalTime getHorarioMarcado() {
 		return horarioMarcado;
 	}
 
-	public void setHorarioMarcado(Horario horarioMarcado) {
+	public void setHorarioMarcado(LocalTime horarioMarcado) {
 		this.horarioMarcado = horarioMarcado;
 	}
 
