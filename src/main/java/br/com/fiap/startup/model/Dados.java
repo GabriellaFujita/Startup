@@ -29,10 +29,9 @@ public class Dados implements Serializable {
 	
 	@Column(name="ds_email")
 	private String email;
-	
-	@Embedded
-	@Column(name="ds_endereco")
-	private Endereco endereco;
+
+//	@Column(name="ds_endereco")
+//	private Endereco endereco;
 	
 	@Column(name="nr_telefone")
 	private String telefone;
@@ -45,11 +44,11 @@ public class Dados implements Serializable {
 		super();
 	}
 
-	public Dados(int id, String email, Endereco endereco, String telefone, Usuario usuario) {
+	public Dados(int id, String email, String telefone, Usuario usuario) {
 		super();
 		this.id = id;
 		this.email = email;
-		this.endereco = endereco;
+//		this.endereco = endereco;
 		this.telefone = telefone;
 		this.usuario = usuario;
 	}
@@ -70,13 +69,13 @@ public class Dados implements Serializable {
 		this.email = email;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+//	public Endereco getEndereco() {
+//		return endereco;
+//	}
+//
+//	public void setEndereco(Endereco endereco) {
+//		this.endereco = endereco;
+//	}
 
 	public String getTelefone() {
 		return telefone;

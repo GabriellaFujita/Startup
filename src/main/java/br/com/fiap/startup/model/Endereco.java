@@ -15,38 +15,39 @@ import javax.persistence.Table;
 @Embeddable
 @Table(name="T_ENDERECO")
 public class Endereco {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name="endereco", sequenceName="sq_endereco", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="endereco")
 	@Column(name="cd_endereco")
-	private int id;
-	
+	private Long Id;
+
 	@Column(name="ds_cep")
 	private String cep;
-	
+
 	@Column(name="ds_logradouro")
 	private String logradouro;
 
 	public Endereco() {
 		super();
 	}
-	
-	public Endereco(int id, String cep, String logradouro) {
+
+	public Endereco(Long Id, String cep, String logradouro) {
 		super();
-		this.id = id;
+		this.Id = Id;
 		this.cep = cep;
 		this.logradouro = logradouro;
 	}
 
-	public int getId() {
-		return id;
+
+	public Long getId() {
+		return Id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(Long id) {
+		Id = id;
 	}
 
 	public String getCep() {
@@ -65,15 +66,15 @@ public class Endereco {
 		this.logradouro = logradouro;
 	}
 
-	private class CepValidator {
-		private static final Pattern CEP_PATTERN = Pattern.compile("\\d{5}-\\d{3}");
+//	private class CepValidator {
+//		private static final Pattern CEP_PATTERN = Pattern.compile("\\d{5}-\\d{3}");
+//
+//		public static boolean isValid(String cep) {
+//			if (cep == null) {
+//				return false;
+//			}
+//			return CEP_PATTERN.matcher(cep).matches();
+//		}
+//	}
 
-		public static boolean isValid(String cep) {
-			if (cep == null) {
-				return false;
-			}
-			return CEP_PATTERN.matcher(cep).matches();
-		}
-	}
-	
 }
