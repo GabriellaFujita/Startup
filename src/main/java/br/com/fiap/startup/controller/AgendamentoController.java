@@ -49,16 +49,17 @@ public class AgendamentoController {
 		agendamentoRepository.deleteById(id);
 	}
 
+
+
 	@PatchMapping("/{id}")
-	public  Horario atualizaHorario(@PathVariable int id) throws Exception {
-		 return horarioRepository.findById(id).map( horario -> {
+	public  Horario atualizaHorario (@PathVariable int id) throws Exception {
+		return horarioRepository.findById(id).map( horario -> {
 
-			 horario.setEstaDisponivel(false);
-			 return horarioRepository.save(horario);
+			horario.setEstaDisponivel(false);
+			return horarioRepository.save(horario);
 
-		 }).orElseThrow( () -> new Exception("400 - Registro não encontrado"));
+		}).orElseThrow( () -> new Exception("400 - Registro não encontrado"));
 
 	}
-
 
 }

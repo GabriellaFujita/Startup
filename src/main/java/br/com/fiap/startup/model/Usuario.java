@@ -54,6 +54,11 @@ public abstract class Usuario implements Serializable {
 		this.dados = dados;
 	}
 
+	public Usuario(int id) {
+		super();
+		this.id = id;
+	}
+
 	public int getId() {
 		return id;
 	}
