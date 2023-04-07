@@ -31,7 +31,11 @@ public class Categoria {
 		this.id = id;
 		this.nome = nome;
 	}
-	
+
+	public Categoria(int i) {
+		this.id = i;
+	}
+
 	public int getId() {
 		return id;
 	}

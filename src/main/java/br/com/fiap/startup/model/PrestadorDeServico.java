@@ -23,6 +23,10 @@ public class PrestadorDeServico extends Usuario {
 		this.nome = nome;
 	}
 
+	public PrestadorDeServico(int id) {
+		super(id);
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -30,5 +34,12 @@ public class PrestadorDeServico extends Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "PrestadorDeServico{" +
+				"id= '" + getId() +
+				"nome='" + nome + '\'' +
+				'}';
+	}
 }
