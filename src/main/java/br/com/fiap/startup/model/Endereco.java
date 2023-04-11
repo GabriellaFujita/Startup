@@ -1,7 +1,5 @@
 package br.com.fiap.startup.model;
 
-import java.util.regex.Pattern;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Entity;
