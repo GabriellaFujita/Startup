@@ -20,7 +20,7 @@ public class Endereco {
 	@SequenceGenerator(name="endereco", sequenceName="sq_endereco", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="endereco")
 	@Column(name="cd_endereco")
-	private Long Id;
+	private int Id;
 
 	@Column(name="ds_cep")
 	private String cep;
@@ -32,7 +32,7 @@ public class Endereco {
 		super();
 	}
 
-	public Endereco(Long Id, String cep, String logradouro) {
+	public Endereco(int Id, String cep, String logradouro) {
 		super();
 		this.Id = Id;
 		this.cep = cep;
@@ -40,11 +40,11 @@ public class Endereco {
 	}
 
 
-	public Long getId() {
+	public int getId() {
 		return Id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		Id = id;
 	}
 

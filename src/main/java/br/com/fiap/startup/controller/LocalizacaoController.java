@@ -10,7 +10,7 @@ import br.com.fiap.startup.repository.*;
 
 
 @RestController
-@RequestMapping("/localizao")
+@RequestMapping("/localizacao")
 public class LocalizacaoController {
 
   @Autowired
