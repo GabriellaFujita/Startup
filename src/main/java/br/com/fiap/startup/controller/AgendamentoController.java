@@ -48,8 +48,6 @@ public class AgendamentoController {
 		agendamentoRepository.deleteById(id);
 	}
 
-
-
 	@PatchMapping("/{id}")
 	public  Horario atualizaHorario (@PathVariable int id) throws Exception {
 		return horarioRepository.findById(id).map( horario -> {
